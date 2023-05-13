@@ -1,8 +1,5 @@
 import java.util.Arrays;
 
-//import Aims.Cart;
-//import Aims.DigitalVideoDisc;
-
 public class Aims {
 	public static void main(String[] args) {
 		Cart anOrder = new Cart();
