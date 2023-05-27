@@ -1,4 +1,3 @@
-
 public class Cart {
 	private int qtyOrdered = 0;
 	public static final int MAX_ORDERED = 20;
@@ -46,4 +45,4 @@ public class Cart {
 		}
 		return listOrdered;
 	}
-
+}

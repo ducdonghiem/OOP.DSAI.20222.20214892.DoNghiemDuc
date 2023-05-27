@@ -1,4 +1,3 @@
-
 public class DigitalVideoDisc {
 	
 	private String title;
@@ -48,6 +47,4 @@ public class DigitalVideoDisc {
 	public float getCost() {
 		return cost;
 	}
-
 }
-
