@@ -114,16 +114,22 @@ public class Cart {
 	 
 	 public void titleSearch(String title) {
 		 boolean found = false;
+		 String lowercaseTitle = title.toLowerCase();
 		 for (DigitalVideoDisc disc : itemsOrdered) {
 			 if (disc == null) {
 				 break;
 			 }
-			 else if (disc.getTitle() == title) {
-				  System.out.println("found: " + disc.toString());
-				 found = true;
-				 break;
-			 }
+			 String[] keywords = lowercaseTitle.split(" ");
+			 String lowercaseDVDTitle = disc.getTitle().toLowerCase();
+			 for (String keyword : keywords) {
+			        if (lowercaseDVDTitle.contains(keyword)) {
+			            found = true;
+			            System.out.println("found: " + disc.toString());
+			            break;
+			        }
+			    }
 		 }
+
 		 if (found == false) {
 			 System.out.println("Empty");
 			 }

@@ -22,6 +22,7 @@ public class CartTest {
 		cart.print();
 		cart.idSearch(2);
 		cart.titleSearch("Aladi");
-		
+		cart.titleSearch("lion");
+		cart.titleSearch("marvel");
 	}
 }
