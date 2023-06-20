@@ -14,6 +14,14 @@ public class Book extends Media{
 		setCategory(category);
 		setCost(cost);
 	}
+	
+	public Book(String title, String category, float cost) {
+		super();
+		setTitle(title);
+		setCategory(category);
+		setCost(cost);
+	}
+	
 	public void addAuthor(String authorName) {
 		if (authors.contains(authorName)) {
 			System.out.println("Author already exists");
