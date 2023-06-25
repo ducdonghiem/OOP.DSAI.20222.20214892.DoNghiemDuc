@@ -11,7 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
+//import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -19,10 +19,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.InputMethodEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
+//import javafx.scene.layout.BorderPane;
 import javafx.util.Duration;
-import com.sun.javafx.stage.EmbeddedWindow;
+//import javafx.stage.Stage;
+//import com.sun.javafx.stage.EmbeddedWindow;
 
 public class CartScreenController {
 	

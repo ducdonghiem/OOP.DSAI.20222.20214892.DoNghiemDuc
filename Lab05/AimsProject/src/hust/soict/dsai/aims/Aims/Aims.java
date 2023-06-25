@@ -1,6 +1,7 @@
 package hust.soict.dsai.aims.Aims;
 
 import hust.soict.dsai.aims.cart.Cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Book;
 import hust.soict.dsai.aims.media.CompactDisc;
@@ -8,6 +9,8 @@ import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.store.Store.Store;
 
 import java.util.Scanner;
+
+import javax.naming.LimitExceededException;
 
 public class Aims {
 	public static void showMenu() {
@@ -82,14 +85,35 @@ public class Aims {
 	                            mediaDetailsMenu();
 	                            int mediaDetailsMenuChoice = s.nextInt();
 	                            if(mediaDetailsMenuChoice == 1){
-	                                cart.addMedia(item);
+	                                try {
+										cart.addMedia(item);
+									} catch (LimitExceededException e) {
+										// TODO Auto-generated catch block
+										e.getMessage();
+										e.toString();
+										e.printStackTrace();
+									}
 	                            }
 	                            else if(mediaDetailsMenuChoice == 2){
 	                                if(item instanceof DigitalVideoDisc){
-	                                    ((DigitalVideoDisc)item).play();
+	                                    try {
+											((DigitalVideoDisc)item).play();
+										} catch (PlayerException e) {
+											// TODO Auto-generated catch block
+											e.getMessage();
+											e.toString();
+											e.printStackTrace();
+										}
 	                                }
 	                                else if(item instanceof CompactDisc){
-	                                    ((CompactDisc)item).play();
+	                                    try {
+											((CompactDisc)item).play();
+										} catch (PlayerException e) {
+											// TODO Auto-generated catch block
+											e.getMessage();
+											e.toString();
+											e.printStackTrace();
+										}
 	                                }
 	                                else{
 	                                    System.out.println("Cannot play this type of media");
@@ -113,7 +137,14 @@ public class Aims {
 	                boolean found = false;
 	                for (Media item : store.getItemsInStore()) {
 	                    if(item.getTitle().equals(title)){
-	                        cart.addMedia(item);
+	                        try {
+								cart.addMedia(item);
+							} catch (LimitExceededException e) {
+								// TODO Auto-generated catch block
+								e.getMessage();
+								e.toString();
+								e.printStackTrace();
+							}
 	                        found = true;
 	                        break;
 	                    }
@@ -130,10 +161,24 @@ public class Aims {
 	                for (Media item : store.getItemsInStore()) {
 	                    if(item.getTitle().equals(title)){
 	                        if(item instanceof DigitalVideoDisc){
-	                            ((DigitalVideoDisc)item).play();
+	                            try {
+									((DigitalVideoDisc)item).play();
+								} catch (PlayerException e) {
+									// TODO Auto-generated catch block
+									e.getMessage();
+									e.toString();
+									e.printStackTrace();
+								}
 	                        }
 	                        else if(item instanceof CompactDisc){
-	                            ((CompactDisc)item).play();
+	                            try {
+									((CompactDisc)item).play();
+								} catch (PlayerException e) {
+									// TODO Auto-generated catch block
+									e.getMessage();
+									e.toString();
+									e.printStackTrace();
+								}
 	                        }
 	                        else{
 	                            System.out.println("Cannot play this media");
@@ -227,10 +272,24 @@ public class Aims {
 	                        for (Media item : cart.getItemsOrdered()) {
 	                            if(item.getTitle().equals(title)){
 	                                if(item instanceof DigitalVideoDisc){
-	                                    ((DigitalVideoDisc)item).play();
+	                                    try {
+											((DigitalVideoDisc)item).play();
+										} catch (PlayerException e) {
+											// TODO Auto-generated catch block
+											e.getMessage();
+											e.toString();
+											e.printStackTrace();
+										}
 	                                }
 	                                else if(item instanceof CompactDisc){
-	                                    ((CompactDisc)item).play();
+	                                    try {
+											((CompactDisc)item).play();
+										} catch (PlayerException e) {
+											// TODO Auto-generated catch block
+											e.getMessage();
+											e.toString();
+											e.printStackTrace();
+										}
 	                                }
 	                                else{
 	                                    System.out.println("Cannot play this media");
@@ -435,10 +494,24 @@ public class Aims {
                         for (Media item : cart.getItemsOrdered()) {
                             if(item.getTitle().equals(title)){
                                 if(item instanceof DigitalVideoDisc){
-                                    ((DigitalVideoDisc)item).play();
+                                    try {
+										((DigitalVideoDisc)item).play();
+									} catch (PlayerException e) {
+										// TODO Auto-generated catch block
+										e.getMessage();
+										e.toString();
+										e.printStackTrace();
+									}
                                 }
                                 else if(item instanceof CompactDisc){
-                                    ((CompactDisc)item).play();
+                                    try {
+										((CompactDisc)item).play();
+									} catch (PlayerException e) {
+										// TODO Auto-generated catch block
+										e.getMessage();
+										e.toString();
+										e.printStackTrace();
+									}
                                 }
                                 else{
                                     System.out.println("Cannot play this media");
