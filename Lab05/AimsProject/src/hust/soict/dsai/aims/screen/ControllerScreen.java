@@ -25,7 +25,7 @@ public class ControllerScreen {
 		addBookScreen.setTitle("Add Book");
 		addCDScreen= new AddCompactDiscToStoreScreen(store, cart, this);
 		addCDScreen.setTitle("Add CD");
-		storeSreen= new StoreScreen(store,cart,this);
+		storeSreen= new StoreScreen(store, cart, this);
 		cartSceen= new CartScreen(cart,this);
 		showStoreScreen();
 //		showAddDVDScreen();

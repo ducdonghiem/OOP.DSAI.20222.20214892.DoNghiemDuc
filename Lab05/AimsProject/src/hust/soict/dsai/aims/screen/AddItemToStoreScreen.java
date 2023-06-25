@@ -24,6 +24,7 @@ import javax.swing.SpringLayout;
 import hust.soict.dsai.aims.cart.Cart.Cart;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.store.Store.Store;
+import hust.soict.dsai.aims.screen.SpringUtilities;
 
 public class AddItemToStoreScreen extends JFrame {
 	protected Store store;

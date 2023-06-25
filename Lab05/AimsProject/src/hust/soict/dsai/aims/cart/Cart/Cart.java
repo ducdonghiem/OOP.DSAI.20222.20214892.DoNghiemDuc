@@ -1,15 +1,19 @@
 package hust.soict.dsai.aims.cart.Cart;
 import java.util.ArrayList;
+import javax.naming.LimitExceededException;
 import java.util.Collections;
 
 import hust.soict.dsai.aims.media.Media;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
 //	private int qtyOrdered = 0;
 	public static final int MAX_ORDERED = 20;
 //	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_ORDERED];
-	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
-	
+//	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 	
 //	public void addDigitalVideoDisc (DigitalVideoDisc disc) {
 //		if (qtyOrdered == MAX_ORDERED) {
@@ -54,9 +58,10 @@ public class Cart {
 //		}
 //	}
 	
-	public void addMedia(Media media) {
+	public void addMedia(Media media) throws LimitExceededException {
 		if ((itemsOrdered.size()) >= MAX_ORDERED) {
-			System.out.println("Full");
+//			System.out.println("Full");
+			throw new LimitExceededException("Full");
 		}
 		else if (itemsOrdered.contains(media)) {
 			System.out.println("Media already exists");
@@ -100,12 +105,15 @@ public class Cart {
 		return totalCost;
 	}
 	
-	public ArrayList<Media> getItemsOrdered() {
-//		String[] listOrdered = new String[qtyOrdered];
-//		for (int i = 0; i< qtyOrdered; i++) {
-//			listOrdered[i] = itemsOrdered[i].getTitle();
-//		}
-//		return listOrdered;
+//	public ArrayList<Media> getItemsOrdered() {
+////		String[] listOrdered = new String[qtyOrdered];
+////		for (int i = 0; i< qtyOrdered; i++) {
+////			listOrdered[i] = itemsOrdered[i].getTitle();
+////		}
+////		return listOrdered;
+//		return itemsOrdered;
+//	}
+	public ObservableList<Media> getItemsOrdered() {
 		return itemsOrdered;
 	}
 	

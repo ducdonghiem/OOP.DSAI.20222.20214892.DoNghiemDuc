@@ -42,13 +42,24 @@ public abstract class Media {
 	}
 	
 	@Override
-	public boolean equals(Object obj) {
-		if (obj == null || this.getClass() != obj.getClass()) {
-			return false;
+	public boolean equals(Object o) {
+		if (o instanceof Media) {
+			Media media = (Media) o;
+			if (this.title.equals(media.title)) {
+				return true;
+			}else {
+				return false;
+			}
 		}
-		else {
-			Media that = (Media) obj;
-			return this.getTitle() == that.getTitle();
-		}
+		return false;
 	}
+//	public boolean equals(Object obj) {
+//		if (obj == null || this.getClass() != obj.getClass()) {
+//			return false;
+//		}
+//		else {
+//			Media that = (Media) obj;
+//			return this.getTitle() == that.getTitle();
+//		}
+//	}
 }
